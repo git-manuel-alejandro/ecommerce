@@ -37,12 +37,12 @@
                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> 
                     <i class="fa fa-bars"></i> Categorias 
                 </button>
+                
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Electronica / Tv, Audio </a>
-                    <a class="dropdown-item" href="#">Auto / Transporte</a>
-                    <a class="dropdown-item" href="#">Ropa Moda / Textiles </a>
-                    <a class="dropdown-item" href="#">Casa & Jardin / Construccion / Luces </a>
-                    <a class="dropdown-item" href="#">Computadoras / Telefonos </a> 
+                    {% for category in links %}
+                    <a class="dropdown-item" href="{% url 'store:products_by_category' category.slug %}">{{ category.name }} </a>    
+                    
+                    {% endfor %}                
                 </div>
             </div>  <!-- category-wrap.// -->
         </div> <!-- col.// -->
